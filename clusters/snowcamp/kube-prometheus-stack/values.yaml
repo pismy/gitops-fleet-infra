@@ -1,0 +1,11 @@
+alertmanager:
+  enabled: false
+grafana:
+  sidecar:
+    dashboards:
+      searchNamespace: ALL
+prometheus:
+  prometheusSpec:
+    podMonitorSelector:
+      matchLabels:
+        app.kubernetes.io/part-of: flux
