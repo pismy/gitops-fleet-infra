@@ -1,0 +1,9 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dev1-aspicot
+  namespace: dev1-ns
+  labels:
+    app: dev1-aspicot
+spec:
+  replicas: 1
