@@ -3,6 +3,9 @@ kind: Kustomization
 namespace: flux-system
 resources:
   - podmonitor.yaml
+spec:
+  dependsOn:
+    - kube-prometheus-stack
 configMapGenerator:
   - name: flux-grafana-dashboards
     files:
