@@ -6,4 +6,3 @@ patches:
   - path: dev1-patch.yaml
     target:
       kind: Kustomization
-  - path: dev1-patch-2.yaml
