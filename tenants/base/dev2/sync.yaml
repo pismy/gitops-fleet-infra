@@ -1,0 +1,28 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: HelmRepository
+metadata:
+  name: charts
+  namespace: flux-system
+spec:
+  interval: 3m0s
+  url: https://one-kubernetes.github.io/dev2-helm-charts
+
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: dev2-carapuce
+  namespace: dev2-ns
+spec:
+  chart:
+    spec:
+      chart: dev2-carapuce-helm
+      sourceRef:
+        kind: HelmRepository
+        name: charts
+        namespace: flux-system
+      version: 0.1.0
+  interval: 1m0s
+  serviceAccountName: dev2
+
