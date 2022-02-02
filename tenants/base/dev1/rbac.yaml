@@ -1,0 +1,37 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    toolkit.fluxcd.io/tenant: dev1
+  name: dev1-ns
+
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  labels:
+    toolkit.fluxcd.io/tenant: dev1
+  name: dev1
+  namespace: dev1-ns
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  labels:
+    toolkit.fluxcd.io/tenant: dev1
+  name: dev1-reconciler
+  namespace: dev1-ns
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: dev1-full-access
+subjects:
+- apiGroup: rbac.authorization.k8s.io
+  kind: User
+  name: gotk:dev1-ns:reconciler
+- kind: ServiceAccount
+  name: dev1
+  namespace: dev1-ns
+
