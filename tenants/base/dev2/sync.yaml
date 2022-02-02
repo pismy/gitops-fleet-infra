@@ -3,7 +3,7 @@ apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: HelmRepository
 metadata:
   name: charts
-  namespace: flux-system
+  namespace: dev2-ns
 spec:
   interval: 3m0s
   url: https://one-kubernetes.github.io/dev2-helm-charts
@@ -21,7 +21,7 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: charts
-        namespace: flux-system
+        namespace: dev2-ns
       version: 0.1.0
   interval: 1m0s
   serviceAccountName: dev2
