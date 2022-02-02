@@ -5,12 +5,12 @@ metadata:
   name: kyverno-policies
   namespace: flux-system
 spec:
-  interval: 10m0s
+  dependsOn:
+  - name: kyverno
+  interval: 5m0s
   path: ./clusters/snowcamp/kyverno-policies
   prune: true
   sourceRef:
     kind: GitRepository
     name: flux-system
-  timeout: 2m0s
-  wait: true
 

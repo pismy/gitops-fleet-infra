@@ -5,7 +5,9 @@ metadata:
   name: tenants
   namespace: flux-system
 spec:
-  interval: 3m0s
+  dependsOn:
+  - name: kyverno-policies
+  interval: 5m0s
   path: ./tenants/staging
   prune: true
   sourceRef:
