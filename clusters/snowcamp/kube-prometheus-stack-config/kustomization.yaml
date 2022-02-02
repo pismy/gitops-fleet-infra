@@ -5,7 +5,7 @@ resources:
   - podmonitor.yaml
 spec:
   dependsOn:
-    - kube-prometheus-stack
+    - name: kube-prometheus-stack
 configMapGenerator:
   - name: flux-grafana-dashboards
     files:
