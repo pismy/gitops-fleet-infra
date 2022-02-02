@@ -1,0 +1,9 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: dev2-carapuce
+  namespace: dev2-ns
+spec:
+  chart:
+    spec:
+      version: 0.1.1
