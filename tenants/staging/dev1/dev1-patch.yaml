@@ -5,3 +5,4 @@ metadata:
   namespace: dev1-ns
 spec:
   path: ./
+  replicas: 3
