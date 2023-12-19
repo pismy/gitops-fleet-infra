@@ -6,7 +6,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m0s
-  path: ./clusters/snowcamp/kyverno
+  path: ./clusters/tbc/kyverno
   prune: true
   sourceRef:
     kind: GitRepository

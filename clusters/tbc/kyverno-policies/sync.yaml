@@ -8,7 +8,7 @@ spec:
   dependsOn:
   - name: kyverno
   interval: 5m0s
-  path: ./clusters/snowcamp/kyverno-policies
+  path: ./clusters/tbc/kyverno-policies
   prune: true
   sourceRef:
     kind: GitRepository
